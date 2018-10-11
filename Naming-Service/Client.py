@@ -1,18 +1,9 @@
-import socket
+import  Pyro4
 
+ns = Pyro4.locateNS()
 
-IP = '127.0.0.1'
-PORT = 5005
-BUFFER_SIZE = 1024
-MESSAGE = "Hello, World!"
+uri = ns.lookup('obj')
 
-ServerSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ServerSock.connect((IP, PORT))
-ServerSock.send(MESSAGE)
-DataServer  = ServerSock.recv(BUFFER_SIZE)
+o = Pyro4.Proxy(uri)
 
-print "Received data:", DataServer
- 
-ServerSock.close()
-
-
+print(o.greeting())
