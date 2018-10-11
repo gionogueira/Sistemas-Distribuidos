@@ -1,3 +1,5 @@
+#coding: utf-8
+
 from SOAPpy import SOAPServer
 
 def calcula(op1,op2,operacao):
@@ -11,4 +13,4 @@ def calcula(op1,op2,operacao):
                 return op1 / op2
 server = SOAPServer(('localhost',8081))
 server.registerFunction(calcula)
-server.serve_forever() # processa uma ou várias solicitações.
+server.serve_forever() #processa uma ou várias solicitações.
