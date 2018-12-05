@@ -11,7 +11,7 @@ channel.basic_publish(exchange='',routing_key='hello', body='Hello World!')
 channel.basic_publish(exchange='',routing_key='hello', body='Hello Again!')
 
 channel.queue_declare(queue='eai')
-channel.basic_publish(exchange='',routing_key='eai', body='Vai encarar?!')
+channel.basic_publish(exchange='',routing_key='eai', body='tudo bem?')
 
 print("Sent Messages...")
 connection.close()
